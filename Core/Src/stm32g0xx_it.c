@@ -55,8 +55,7 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern TIM_HandleTypeDef htim1;
-extern TIM_HandleTypeDef htim14;
+
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -142,45 +141,54 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles TIM1 break, update, trigger and commutation interrupts.
+  * @brief This function handles EXTI line 0 and line 1 interrupts.
   */
-void TIM1_BRK_UP_TRG_COM_IRQHandler(void)
+void EXTI0_1_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM1_BRK_UP_TRG_COM_IRQn 0 */
+  /* USER CODE BEGIN EXTI0_1_IRQn 0 */
 
-  /* USER CODE END TIM1_BRK_UP_TRG_COM_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim1);
-  /* USER CODE BEGIN TIM1_BRK_UP_TRG_COM_IRQn 1 */
+  /* USER CODE END EXTI0_1_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_0_Pin);
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_1_Pin);
+  /* USER CODE BEGIN EXTI0_1_IRQn 1 */
 
-  /* USER CODE END TIM1_BRK_UP_TRG_COM_IRQn 1 */
+  /* USER CODE END EXTI0_1_IRQn 1 */
 }
 
 /**
-  * @brief This function handles TIM1 capture compare interrupt.
+  * @brief This function handles EXTI line 2 and line 3 interrupts.
   */
-void TIM1_CC_IRQHandler(void)
+void EXTI2_3_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM1_CC_IRQn 0 */
+  /* USER CODE BEGIN EXTI2_3_IRQn 0 */
 
-  /* USER CODE END TIM1_CC_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim1);
-  /* USER CODE BEGIN TIM1_CC_IRQn 1 */
+  /* USER CODE END EXTI2_3_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_2_Pin);
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_3_Pin);
+  /* USER CODE BEGIN EXTI2_3_IRQn 1 */
 
-  /* USER CODE END TIM1_CC_IRQn 1 */
+  /* USER CODE END EXTI2_3_IRQn 1 */
 }
 
 /**
-  * @brief This function handles TIM14 global interrupt.
+  * @brief This function handles EXTI line 4 to 15 interrupts.
   */
-void TIM14_IRQHandler(void)
+void EXTI4_15_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM14_IRQn 0 */
+  /* USER CODE BEGIN EXTI4_15_IRQn 0 */
 
-  /* USER CODE END TIM14_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim14);
-  /* USER CODE BEGIN TIM14_IRQn 1 */
+  /* USER CODE END EXTI4_15_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_4_Pin);
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_5_Pin);
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_6_Pin);
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_7_Pin);
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_8_Pin);
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_9_Pin);
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_10_Pin);
+  HAL_GPIO_EXTI_IRQHandler(FAN_Tach_IN_11_Pin);
+  /* USER CODE BEGIN EXTI4_15_IRQn 1 */
 
-  /* USER CODE END TIM14_IRQn 1 */
+  /* USER CODE END EXTI4_15_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

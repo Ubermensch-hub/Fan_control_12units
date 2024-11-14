@@ -1,0 +1,11 @@
+../Core/Src/tim.c:54:6:MX_TIM1_Init	120	static
+../Core/Src/tim.c:146:6:MX_TIM2_Init	80	static
+../Core/Src/tim.c:222:6:MX_TIM3_Init	56	static
+../Core/Src/tim.c:287:6:MX_TIM16_Init	88	static
+../Core/Src/tim.c:344:6:HAL_TIM_Base_MspInit	128	static
+../Core/Src/tim.c:443:6:HAL_TIM_MspPostInit	56	static
+../Core/Src/tim.c:503:6:HAL_TIM_Base_MspDeInit	16	static
+../Core/Src/tim.c:575:6:HAL_TIM_IC_CaptureCallback	96	static
+../Core/Src/tim.c:718:6:adjust_PWM	8	static
+../Core/Src/tim.c:728:5:count_connected_devices	16	static
+../Core/Src/tim.c:748:6:set_PWM	16	static

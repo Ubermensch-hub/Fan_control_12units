@@ -63,7 +63,7 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = FAN_Tach_IN_11_Pin|FAN_Tach_IN_0_Pin|FAN_Tach_IN_1_Pin|FAN_Tach_IN_2_Pin
                           |FAN_Tach_IN_3_Pin|FAN_Tach_IN_4_Pin|FAN_Tach_IN_5_Pin|FAN_Tach_IN_6_Pin
                           |FAN_Tach_IN_7_Pin|FAN_Tach_IN_8_Pin|FAN_Tach_IN_9_Pin|FAN_Tach_IN_10_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 

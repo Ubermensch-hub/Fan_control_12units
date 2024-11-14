@@ -54,6 +54,8 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* USER CODE BEGIN Prototypes */
 void adjust_PWM();
 void set_PWM();
+int count_connected_devices();
+int num_devices();
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

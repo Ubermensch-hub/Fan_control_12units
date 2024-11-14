@@ -35,7 +35,7 @@
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
-
+/* USER CODE BEGIN PD */
 
 /* USER CODE END PD */
 
@@ -59,19 +59,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-//Обработчик для входящего ШИМ
 
-
-
-
-#define NUM_PINS 6
-
-int count_connected_devices(void)
-{
-  int count = 0;
-
-  return count;
-}
 
 /* USER CODE END 0 */
 
@@ -116,7 +104,15 @@ int main(void)
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
+  HAL_NVIC_EnableIRQ(TIM2_IRQn);
+  HAL_NVIC_EnableIRQ(TIM3_IRQn);
 
+  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
+  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_2);
+  HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_2);
+  HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_3);
+  HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_4);
 
   /* USER CODE END 2 */
 
@@ -127,7 +123,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  set_PWM();
+
+	  set_PWM(count_connected_devices);
 	  adjust_PWM();
 
 	  HAL_Delay(10);
